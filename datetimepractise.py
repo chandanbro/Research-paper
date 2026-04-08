@@ -42,10 +42,10 @@ for i, (train_idx, val_idx) in enumerate(skf.split(X_train_res, y_train_res)):
     X_c, y_c = X_train_res.iloc[train_idx], y_train_res.iloc[train_idx]
 
     model = RandomForestClassifier(
-        n_estimators=300,  # Increased trees
-        max_depth=15,  # Increased depth for better pattern recognition
+        n_estimators=300,  
+        max_depth=15,  
         min_samples_leaf=2,
-        class_weight='balanced',  # Automatic balancing instead of 1:4
+        class_weight='balanced',  
         random_state=42,
         n_jobs=-1
     )
@@ -97,4 +97,4 @@ else:
     print( "Consider rest, activity, and talking to someone. ")
     print("Seek professional help if it continues.")
 print('This is not professional advice, AI can be wrong. So please consult to Doctor')
-plot_classification_report(y_test, y_pred)
+
